@@ -1,2 +1,2 @@
 # bytebank
-Banco digital 
+Banco funcional fictício feito em Java 
