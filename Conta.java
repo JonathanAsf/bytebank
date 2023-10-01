@@ -4,7 +4,13 @@ public class Conta {
 		private double saldo;
 		private int agencia;
 		private int numero;
-		public Cliente titular;
+		private Cliente titular;
+		
+		public Conta(int agencia, int numero) {
+			this.agencia = agencia;
+			this.numero = numero;
+			System.out.println("Conta criada com sucesso");
+		}
 		
 		//Metodo de depósito
 		void deposito(double valor) {
@@ -18,7 +24,7 @@ public class Conta {
 				System.out.println("Saldo atual da conta:" + this.saldo);
 				return true;
 			}else{
-				System.out.println("Saldo insuficiente para saldo");
+				System.out.println("Saldo insuficiente para saque");
 				return false;
 			}
 			
@@ -42,6 +48,10 @@ public class Conta {
 		
 		//Metodos agencia
 		public void setAgencia(int agencia) {
+			if(agencia <= 0) {
+				System.out.println("A agencia necessita ser maior que zero");
+				return;
+			}
 			this.agencia = agencia;
 		}
 		public int getAgencia() {
@@ -49,12 +59,25 @@ public class Conta {
 		}
 		//Metodo de set numero da conta
 		public void setNumero(int numero) {
+			if(numero <= 0) {
+				System.out.println("O numero necessita ser maior que zero");
+				return;
+			}
 			this.numero = numero;
 		}
 		
 		public int getNumero() {
 			return this.numero;
 		}
+		//Método titular
+		public void setTitular(Cliente titular) {
+			this.titular = titular;
+		}
+		
+		public Cliente getTitular() {
+			return titular;
+		}
 		
 }
+
 
